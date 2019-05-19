@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  recipient_count: 1
+  estimated_in_home_date: 2019-05-18
+  mailing_date: 2019-05-18
+  paper_format: MyString
+  postage_type: MyString
+  cost: 9.99
+
+two:
+  name: MyString
+  recipient_count: 1
+  estimated_in_home_date: 2019-05-18
+  mailing_date: 2019-05-18
+  paper_format: MyString
+  postage_type: MyString
+  cost: 9.99
