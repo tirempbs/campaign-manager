@@ -10,18 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_19_022052) do
+ActiveRecord::Schema.define(version: 2019_05_23_203518) do
 
   create_table "campaigns", force: :cascade do |t|
     t.string "name"
     t.integer "recipient_count"
-    t.date "estimated_in_home_date"
     t.date "mailing_date"
     t.string "paper_format"
     t.string "postage_type"
-    t.decimal "cost"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "client_id"
   end
 
   create_table "clients", force: :cascade do |t|
