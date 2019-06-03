@@ -1,0 +1,7 @@
+<h2>New Client</h2>
+<% if flash[:errors] %>
+  <% flash[:errors].each do |e| %>
+    <%= p e %>
+  <% end %>
+<% end %>
+<%= render 'form' %>

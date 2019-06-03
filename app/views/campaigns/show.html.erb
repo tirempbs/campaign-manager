@@ -1,0 +1,37 @@
+<h2><%= @campaign.name %></h2>
+
+<% dstart = @campaign.mailing_date %>
+<% dend = @campaign.mailing_date %>
+
+<% if @campaign.postage_type == 'First Class' %>
+  <% dstart += 1 %>
+  <% dend += 3 %>
+<% elsif @campaign.postage_type == 'Standard Mail' %>
+  <% dstart += 3 %>
+  <% dend += 5 %>
+<% end %>
+
+<% pfc = 0 %>
+
+<% if @campaign.paper_format == '4x6"' %>
+  <% pfc = 1.00 %>
+<% elsif @campaign.paper_format == '6x11"' %>
+  <% pfc = 2.00 %>
+<% elsif @campaign.paper_format == '6x9"' %>
+  <% pfc = 1.50 %>
+<% end %>
+
+<% ptc = 0 %>
+
+<% if @campaign.postage_type == 'Standard Mail' %>
+  <% ptc = 1.00 %>
+<% elsif @campaign.postage_type == 'First Class' %>
+  <% ptc = 2.00 %>
+<% end %>
+
+<div><strong>Recipient Count:</strong> <%= @campaign.recipient_count %> Recipients</div><br>
+<div><strong>Mailing Date:</strong> <%= @campaign.mailing_date %></div><br>
+<div><strong>Estimate In-Home Date:</strong> <%= dstart %> to <%= dend %></div><br>
+<div><strong>Paper Format: </strong><%= @campaign.paper_format %></div><br>
+<div><strong>Postage Type:</strong> <%= @campaign.postage_type %></div><br>
+<div><strong>Cost:</strong> $<%= pfc * ptc * @campaign.recipient_count %> </div>

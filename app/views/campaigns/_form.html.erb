@@ -1,0 +1,30 @@
+<%= form_for(@campaign) do |f| %>
+  <label>Client:</label><br>
+  <%= f.collection_select :client_id, Client.all, :id, :name %><br><br>
+
+  <label>Campaign Name:</label><br>
+  <%= f.text_field :name %><br><br>
+ 
+  <label>Recipient Count:</label><br>
+  <%= f.number_field :recipient_count, class: :text_field, step: :any %><br><br>
+
+  <label>Date:</label><br>
+  <%= f.date_field :mailing_date %><br><br>
+
+  <label>Paper Format:</label><br>
+  <%= f.radio_button :paper_format, '4x6"', :checked => true %> 
+  <%= f.label :paper_format, '4x6"', :value => '4x6"' %>
+  <%= f.radio_button :paper_format, '6x11"' %>
+  <%= f.label :paper_format, '6x11"', :value => '6x11"' %>
+  <%= f.radio_button :paper_format, '6x9"' %>
+  <%= f.label :paper_format, '6x9"', :value => '6x9"' %><br><br>
+
+  <label>Postage Type:</label><br>
+  <%= f.radio_button :postage_type, 'Standard Mail', :checked => true %> 
+  <%= f.label :postage_type, 'Standard Mail', :value => 'Standard Mail' %>
+  <%= f.radio_button :postage_type, 'First Class' %> 
+  <%= f.label :postage_type, 'First Class', :value => 'First Class' %><br><br>
+
+  <br>
+  <%= f.submit %>
+<% end %>
