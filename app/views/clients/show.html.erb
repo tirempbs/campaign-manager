@@ -1,7 +1,11 @@
 <h2><%= @client.name %> Campaigns</h2>
 
+<div><%= link_to 'Create a New Campaign', new_campaign_path %></div>
+
 <ul>
   <% @client.campaigns.each do |c| %>
     <li><%= link_to c.name, campaign_path(c) %></li>
   <% end %>
 </ul>
+
+<div><%= link_to 'Return to Clients', clients_path %></div>

@@ -25,7 +25,7 @@ class CampaignsController < ApplicationController
     private
 
     def campaign_params
-        params.require(:campaign).permit(:client_id, :name, :recipeint_count, :mailing_date, :paper_format, :postage_type)
+        params.require(:campaign).permit(:client_id, :name, :recipient_count, :mailing_date, :paper_format, :postage_type)
     end
 
 end
